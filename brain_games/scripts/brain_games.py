@@ -1,5 +1,7 @@
+from brain_games.cli import greeting
+
 def main():
-    print('Welcome to the Brain Games!')
+    greeting()
 
 if __name__ == "__main__":
     main()
