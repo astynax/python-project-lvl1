@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "alekgit_brain_games"
-version = "0.0.1"
+version = "0.1.0"
 description = "A bunch of simple cli-games"
 authors = ["alekgit <shalek.edu@yandex.ru>"]
 packages = [
