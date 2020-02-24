@@ -7,3 +7,6 @@ run:
 build:
 	rm -rf dist/
 	poetry build
+
+publish:
+	poetry publish --build -r test
