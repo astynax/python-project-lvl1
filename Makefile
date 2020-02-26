@@ -4,6 +4,9 @@ install:
 run:
 	poetry run brain-games
 
+run_even:
+	poetry run brain-even
+
 build:
 	rm -rf dist/
 	poetry build
