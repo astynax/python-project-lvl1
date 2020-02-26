@@ -7,6 +7,9 @@ run:
 run_even:
 	poetry run brain-even
 
+run_calc:
+	poetry run brain-calc
+
 build:
 	rm -rf dist/
 	poetry build
