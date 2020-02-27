@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
 
-"""brain_games.py module."""
+"""brain_games script."""
 from brain_games.cli import greeting
 
 

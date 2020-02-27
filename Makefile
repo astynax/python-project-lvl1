@@ -10,6 +10,9 @@ run_even:
 run_calc:
 	poetry run brain-calc
 
+run_gcd:
+	poetry run brain-gcd
+
 build:
 	rm -rf dist/
 	poetry build

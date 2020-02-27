@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
 
-"""brain_games.py module."""
+"""brain_even script."""
 from brain_games.engine import engine
 from brain_games.games.even import DESCRIPTION, generate_round_data
 
