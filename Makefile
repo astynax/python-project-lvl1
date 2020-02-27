@@ -17,8 +17,8 @@ build:
 	rm -rf dist/
 	poetry build
 
-publish:
-	poetry publish --build -r test
+publish: build
+	poetry publish -r test
 
 lint:
 	poetry run flake8 ./brain_games/
