@@ -13,6 +13,9 @@ run_calc:
 run_gcd:
 	poetry run brain-gcd
 
+run_progression:
+	poetry run brain-progression
+
 build:
 	rm -rf dist/
 	poetry build
