@@ -20,11 +20,10 @@ run_prime:
 	poetry run brain-prime
 
 build:
-	rm -rf dist/
 	poetry build
 
-publish: build
-	poetry publish -r test
+publish:
+	poetry publish --build -r test
 
 lint:
 	poetry run flake8 ./brain_games/

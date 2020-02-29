@@ -6,14 +6,7 @@ from random import randint
 
 DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 
-
-def inner(div, number, div_upper_bound):
-    """inner."""
-    if div >= div_upper_bound:
-        return True
-    if number % div == 0:  # noqa: S001
-        return False
-    return inner(div + 2, number, div_upper_bound)
+DIV_LOWER_BOUND = 3
 
 
 def is_prime(number):
@@ -23,9 +16,13 @@ def is_prime(number):
     if number < 2 or number % 2 == 0:
         return False
 
-    div_lower_bound = 3
     div_upper_bound = math.sqrt(number)
-    return inner(div_lower_bound, number, div_upper_bound)
+
+    def inner(div):
+        if div >= div_upper_bound:
+            return True
+        return False if number % div == 0 else inner(div + 2)  # noqa: S001
+    return inner(DIV_LOWER_BOUND)
 
 
 def generate_round_data():

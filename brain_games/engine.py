@@ -6,27 +6,29 @@ import prompt
 NUMBER_OF_ROUNDS = 3
 
 
-def engine(description, get_round_data):
+def engine(game):  # noqa: WPS213
     """engine."""
     print('Welcome to the Brain Games!')
-    print(description)
+    print(game.DESCRIPTION)
     print()
     name = prompt.string('May I have your name? ')
     print('Hello, {name}!'.format(name=name))
     print()
 
     for _ in range(NUMBER_OF_ROUNDS):
-        question, answer = get_round_data()
-        print('Question: {0}'.format(question))
+        question, answer = game.generate_round_data()
+        print('Question: {question}'.format(question=question))
         user_answer = prompt.string('Your answer: ')
-        if user_answer == answer:
-            print('Correct!')
-        else:
+        if user_answer != answer:
             print(
-                "Answer '{wrong}' is wrong answer ;(. Correct answer was '{correct}'."
-                    .format(wrong=user_answer, correct=answer),
+                "Answer '{wrong}' is wrong answer ;(. "
+                "Correct answer was '{correct}'.".format(  # noqa: WPS326
+                    wrong=user_answer,
+                    correct=answer,
+                ),
                  )
-            print("Let's try again, {0}!".format(name))
-            return
-
-    print('Congratulations, {0}!'.format(name))
+            print("Let's try again, {name}!".format(name=name))
+            break
+        print('Correct!')
+    else:
+        print('Congratulations, {name}!'.format(name=name))

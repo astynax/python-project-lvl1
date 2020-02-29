@@ -2,12 +2,12 @@
 
 """brain_progression script."""
 from brain_games.engine import engine
-from brain_games.games.progression import DESCRIPTION, generate_round_data
+from brain_games.games import progression
 
 
 def main():
     """Run this script."""
-    engine(DESCRIPTION, generate_round_data)
+    engine(progression)
 
 
 if __name__ == '__main__':
